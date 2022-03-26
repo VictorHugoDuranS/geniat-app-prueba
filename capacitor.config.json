@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "geniat-app-prueba",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

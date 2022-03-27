@@ -28,10 +28,6 @@ export class AuthInterceptorService {
         req = req.clone({
           setHeaders: {'Authorization': 'Bearer ' + this.token}
         });
-      }else {
-        req = req.clone({
-          setHeaders: {'token': '_prueba'}
-        });
       }
     }
     return next.handle(req);

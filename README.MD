@@ -1,7 +1,9 @@
 
 # Proceso para compilar una aplicacion en Android
 
+## Clonar proyecto
 
+```sh git clone https://github.com/VictorHugoDuranS/geniat-app-prueba.git ```
 ##  Prerrequisitos
 
 * Capacitor CLI

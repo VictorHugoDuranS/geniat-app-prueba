@@ -3,7 +3,9 @@
 
 ## Clonar proyecto
 
-```sh git clone https://github.com/VictorHugoDuranS/geniat-app-prueba.git ```
+```sh
+git clone https://github.com/VictorHugoDuranS/geniat-app-prueba.git
+```
 ##  Prerrequisitos
 
 * Capacitor CLI

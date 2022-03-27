@@ -1,15 +1,15 @@
-export var data: {
+export const data = {
   resultados: [
     {
-      nombreModelo: "dasd",
-      nombreMarca: "dsad",
+      nombreModelo: "GJ121S",
+      nombreMarca: "Abarth",
       idModelo: 1
     },{
-      nombreModelo: "dasd",
-      nombreMarca: "dasdad",
+      nombreModelo: "DAS122",
+      nombreMarca: "Alfa Romeo",
       idModelo: 1
       }
-  ]
+  ],
   marcas: [
     {
     nombre: "Abarth",

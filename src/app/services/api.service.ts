@@ -11,10 +11,10 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
 
-  get(endPoint: string): Promise<any> {
+  get<M>(endPoint: string, dataRequest?: any): Promise<M> {
     return new Promise(
       (resolve,reject) => {
-        this.http.get(this.baseApi.concat(endPoint)).subscribe(
+        this.http.get(this.baseApi.concat(endPoint), {params: dataRequest}).subscribe(
           (resultSet: Response) => {
             if(resultSet.response){
                 resolve(resultSet.data);

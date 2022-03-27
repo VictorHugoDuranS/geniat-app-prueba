@@ -2,11 +2,6 @@
 # Proceso para compilar una aplicacion en Android
 
 
-
-<!-- <div align="center">
-  <img src="https://drive.google.com/thumbnail?id=1MG5dqzFxEE6ZnChajpARbuuCJHzkY_0R">
-</div>-->
-
 ##  Prerrequisitos
 
 * Capacitor CLI

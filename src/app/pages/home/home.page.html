@@ -7,5 +7,36 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="cargarData($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-item>
+    <ion-label>Marcas</ion-label>
+    <ion-select [formControl]="marca" placeholder="Seleccione una marca">
+      <ion-select-option [value]="null">{{ ('Todos los datos') }}</ion-select-option>
 
+      <ion-select-option *ngFor="let marca of marcas | async" [value]="marca.idMarca">{{ marca.nombre }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-list>
+    <ion-list-header lines="inset">
+      <ion-label>{{ ("Modelo / Marca") }}</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let auto of autos | async">
+      <ion-label>{{ auto.nombreModelo }}</ion-label>
+      <ion-text>
+        <h3>{{ auto.nombreMarca }}</h3>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+  <ion-segment scrollable  (ionChange)="segmentChanged($event)" [value]="1">
+    <ion-segment-button [value]="section" *ngFor="let section of numbersPages">
+      <ion-label>{{ section }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-item>
+    <ion-button slot="end" (click)="addPage()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </ion-item>
 </ion-content>

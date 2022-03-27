@@ -21,16 +21,7 @@ export class AuthService {
 
 
   login(data: any) {
-    this.apiSrvc.post(this.endPointLoggin,data).then(
-      (resultSet: Response) => {
-        this.dataSrvc.setData('token',resultSet.data.jwt);
-        this.route.navigate(['home']);
-      }
-    ).catch(
-      async (err) => {
-        const toast = await this.viewService._createToastSimple(err);
-        toast.present();      }
-    )
+    return this.apiSrvc.post(this.endPointLoggin,data);
   }
 
   register(usuario: any) {
@@ -48,3 +39,5 @@ export class AuthService {
 
 
 }
+
+

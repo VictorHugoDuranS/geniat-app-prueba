@@ -5,6 +5,7 @@ import { DataService } from 'src/app/services/data.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ViewsService } from 'src/app/services/views.service';
 import { Usuario } from 'src/app/interfaces/usuario.interface';
+import { Response } from 'src/app/interfaces/response.interface';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   public usuarios: Usuario[] = [];
   public form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
   constructor(
@@ -34,19 +35,20 @@ export class LoginComponent implements OnInit {
   }
 
   async save() {
-    try {
-      this.authSrvc.login(this.form.value);
-      this.form.reset();
-    } catch (err) {
-      const toast = await this.viewSrvc._createToastSimple(err);
-      toast.present();
-    }
+    this.authSrvc.login(this.form.value).then(
+      (resultSet: Response) => {
+        localStorage.setItem('token',resultSet.data.jwt);
+        this.route.navigate(['home']);
+        this.form.reset();
+      }
+    ).catch(
+      async (err) => {
+        this.route.navigate(['home'])
+        const toast = await this.viewSrvc._createToastSimple(err);
+        toast.present();
+      }
+    )
   }
-
-  login(): void {
-
-  }
-
   goToRegister() {
     this.route.navigate(['registro']);
   }

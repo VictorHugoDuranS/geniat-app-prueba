@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Marca } from 'src/app/interfaces/marcas.interface';
 import { ModeloAuto } from 'src/app/interfaces/modelo-auto.interfaces';
@@ -22,7 +23,7 @@ export class HomePage implements OnInit {
   public autos: BehaviorSubject<ModeloAuto []> = new BehaviorSubject<ModeloAuto []>([]);
   public marcas: BehaviorSubject<Marca []> = new BehaviorSubject<Marca []>([]);
 
-  constructor(private autoSrvc: AutosService, private viewSrvc: ViewsService) {
+  constructor(private autoSrvc: AutosService, private viewSrvc: ViewsService, private route: Router) {
     this.marca.valueChanges.subscribe(
       value =>{
         if(value) {
@@ -103,5 +104,8 @@ export class HomePage implements OnInit {
   addPage() {
     const lastPage = this.numbersPages[this.numbersPages.length - 1];
     this.numbersPages.push(lastPage + 1);
+  }
+  salir() {
+    this.route.navigate(['login'])
   }
 }

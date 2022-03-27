@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApi: 'https://apidevedm.ingeniat.com/proyectoCandidatos'
+  baseApi: 'https://apifrontend.ingeniat.com/proyectoCandidatos'
 };
 
 /*

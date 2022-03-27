@@ -11,7 +11,7 @@ import { ViewsService } from './views.service';
 export class AuthService {
 
   private endPointLoggin = '/login';
-  private endPointRegistro = '/registro ';
+  private endPointRegistro = '/registro';
 
 
 

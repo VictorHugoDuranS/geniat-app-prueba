@@ -7,13 +7,8 @@ import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
     path: 'home',
-    // canActivate: [AuthGuard],
+   // canActivate: [AuthGuard],
     component: HomePage,
   },{
     path: 'login',

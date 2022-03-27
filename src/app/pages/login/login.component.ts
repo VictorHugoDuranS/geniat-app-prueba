@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
       }
     ).catch(
       async (err) => {
-        this.route.navigate(['home'])
         const toast = await this.viewSrvc._createToastSimple(err);
         toast.present();
       }

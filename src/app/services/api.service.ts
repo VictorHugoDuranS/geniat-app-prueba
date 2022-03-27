@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Response } from '../interfaces/response.interface';
@@ -31,7 +31,7 @@ export class ApiService {
   post(endPoint: string, data: any){
     return new Promise(
       (resolve,reject) => {
-        this.http.post(this.baseApi.concat(endPoint), data).subscribe(
+        this.http.post(this.baseApi.concat(endPoint), {},{params: data}).subscribe(
           (resultSet: Response) => {
             if(resultSet.response){
                 resolve(resultSet);

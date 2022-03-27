@@ -23,8 +23,8 @@ export class RegistroComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     firstname: new FormControl('', [Validators.required, Validators.pattern(this.namePattern)]),
     lastname: new FormControl('', [Validators.required, Validators.pattern(this.namePattern)]),
-    email: new FormControl('', [Validators.required, Validators.pattern(this.patternEmail)]),
     birthdate: new FormControl(null, [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.pattern(this.patternEmail)]),
     password: new FormControl('', [Validators.required]),
     password_confirmation: new FormControl('', [Validators.required]),
   });
@@ -43,7 +43,6 @@ export class RegistroComponent implements OnInit {
     try {
       const usuario: Usuario = this.form.value;
       delete usuario['password_confirmation'];
-      usuario.birthdate = this.formatDate(usuario.birthdate);
       this.authService.register(usuario);
       this.form.reset();
     }catch(err) {

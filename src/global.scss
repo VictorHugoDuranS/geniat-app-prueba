@@ -24,3 +24,102 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.ion-badge-art {
+  left: 43px;
+  top: 25px;
+  z-index: 4;
+  position: absolute;
+  background-color: var( --ion-color-base);
+}
+.ion-badge-cart{
+  left: -5px;
+  z-index: 3;
+  position: absolute;
+  background-color: var(--ion-color-base);
+}
+ion-fab {
+  ion-badge {
+    left: -5px;
+    z-index: 3;
+    position: absolute;
+    background-color: var(--ion-color-base);
+    color: #ffffff;
+  }
+  ion-fab-button {
+    --background: var(--ion-color-base);
+    --color: #ffffff;
+
+    ion-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+  }
+
+}
+ion-button {
+  --background: var(--ion-color-base);
+  --color: #ffffff
+}
+
+ion-toolbar {
+  --background: var(--ion-color-base);
+  color: #ffffff;
+}
+img {
+  max-width: 200px;
+max-height: 200px;
+}
+.base-header{
+
+  @media (prefers-color-scheme: dark) {
+    height: 40%;
+    width: 100% !important;
+    background-color:  var(--ion-color-base);
+  }
+
+  @media (prefers-color-scheme: light) {
+    height: 40%;
+    width: 100% !important;
+    background-color:  var(--ion-color-base);
+  }
+}
+
+.base-content{
+  @media (prefers-color-scheme: dark) {
+  height: 75% !important;
+  width: 100%;
+  position: absolute;
+  background-color: #ffffff;
+  bottom: 0;
+  border-radius: 3em 3em 0 0;
+  padding: 2rem;
+
+  .sliders{
+    position: absolute;
+    top: -6.5rem;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  }
+
+  @media (prefers-color-scheme: light) {
+    //height: 60%; // => height para qcuando hay una imagend de fondo
+  height: 75% !important; //=> height par cuando la imagen esta dentro de la carta
+  width: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  border-radius: 2em 2em 0 0;
+  padding: 2rem;
+
+  .sliders{
+    position: absolute;
+    top: -6.5rem;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  }
+}

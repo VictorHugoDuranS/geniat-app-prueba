@@ -74,6 +74,41 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+
+
+  /*Main*/
+  --ion-color-main: #686B75;
+	--ion-color-main-rgb: 104,107,117;
+	--ion-color-main-contrast: #ffffff;
+	--ion-color-main-contrast-rgb: 255,255,255;
+	--ion-color-main-shade: #5c5e67;
+	--ion-color-main-tint: #777a83;
+
+  /*Font*/
+  --ion-color-font: #F0F1F5;
+	--ion-color-font-rgb: 240,241,245;
+	--ion-color-font-contrast: #000000;
+	--ion-color-font-contrast-rgb: 0,0,0;
+	--ion-color-font-shade: #d3d4d8;
+	--ion-color-font-tint: #f2f2f6;
+
+  /*Base  */
+	--ion-color-base: #ca1d1d;
+	--ion-color-base-rgb: 202,29,29;
+	--ion-color-base-contrast: #ffffff;
+	--ion-color-base-contrast-rgb: 255,255,255;
+	--ion-color-base-shade: #b21a1a;
+	--ion-color-base-tint: #cf3434;
+
+  /* Delelete */
+  --ion-color-delete: #D15253;
+	--ion-color-delete-rgb: 209,82,83;
+	--ion-color-delete-contrast: #ffffff;
+	--ion-color-delete-contrast-rgb: 255,255,255;
+	--ion-color-delete-shade: #b84849;
+	--ion-color-delete-tint: #d66364;
+
 }
 
 @media (prefers-color-scheme: dark) {
